@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Atelier · BK AUTO 51</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css?v=6">
+  <link rel="stylesheet" href="/assets/atelier.css?v=6">
+</head>
+<body class="atelier">
+  <header class="header">
+    <div class="container header__inner">
+      <a href="/" class="logo" aria-label="Retour au site">
+        <span class="logo__mark">BK</span>
+        <span class="logo__text">AUTO <strong>51</strong></span>
+      </a>
+      <span class="atelier__tag">Espace atelier · privé</span>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="parts">
+        <h1 class="atelier__title">Identifier un véhicule</h1>
+        <p class="muted">Saisissez la plaque pour obtenir la version exacte et les données techniques, puis préparez la liste des pièces à commander.</p>
+
+        <form class="plate-form" id="plate-form" novalidate>
+          <label class="plate" for="plate-input">
+            <span class="plate__eu"><span class="plate__stars">★</span>F</span>
+            <input id="plate-input" name="plaque" placeholder="AB-123-CD" maxlength="10" autocomplete="off" spellcheck="false" aria-label="Plaque d'immatriculation" autofocus>
+            <span class="plate__dep">51</span>
+          </label>
+          <button class="btn btn--primary" type="submit">Identifier <span class="btn__arrow">→</span></button>
+        </form>
+        <p class="plate-status" id="plate-status" role="status" aria-live="polite"></p>
+        <div class="history" id="history" hidden></div>
+      </div>
+
+      <div class="sheet" id="sheet" hidden>
+        <div class="vehicle">
+          <div class="vehicle__icon"><svg viewBox="0 0 24 24"><path d="M5 17h14M6 17l1.5-5h9L18 17M8 12l1-3h6l1 3"/><circle cx="8" cy="18" r="1.5"/><circle cx="16" cy="18" r="1.5"/></svg></div>
+          <div>
+            <p class="vehicle__title" id="vehicle-title"></p>
+            <p class="vehicle__meta" id="vehicle-meta"></p>
+          </div>
+        </div>
+
+        <div class="sheet__cols">
+          <section class="panel">
+            <h2 class="panel__title">Données techniques</h2>
+            <p class="muted small">Cliquez sur une valeur pour la copier.</p>
+            <dl class="specs" id="specs"></dl>
+          </section>
+
+          <section class="panel">
+            <h2 class="panel__title">Pièces à commander</h2>
+            <div class="parts__grid" id="parts-grid">
+              <label class="part"><input type="checkbox" value="Plaquettes de frein AV"><span>Plaquettes AV</span></label>
+              <label class="part"><input type="checkbox" value="Plaquettes de frein AR"><span>Plaquettes AR</span></label>
+              <label class="part"><input type="checkbox" value="Disques de frein AV"><span>Disques AV</span></label>
+              <label class="part"><input type="checkbox" value="Disques / tambours AR"><span>Disques / tambours AR</span></label>
+              <label class="part"><input type="checkbox" value="Filtre à huile"><span>Filtre à huile</span></label>
+              <label class="part"><input type="checkbox" value="Filtre à air"><span>Filtre à air</span></label>
+              <label class="part"><input type="checkbox" value="Filtre habitacle"><span>Filtre habitacle</span></label>
+              <label class="part"><input type="checkbox" value="Filtre à carburant"><span>Filtre à carburant</span></label>
+              <label class="part"><input type="checkbox" value="Huile moteur"><span>Huile moteur</span></label>
+              <label class="part"><input type="checkbox" value="Kit distribution + pompe à eau"><span>Kit distribution</span></label>
+              <label class="part"><input type="checkbox" value="Courroie accessoires + galets"><span>Courroie accessoires</span></label>
+              <label class="part"><input type="checkbox" value="Kit embrayage"><span>Kit embrayage</span></label>
+              <label class="part"><input type="checkbox" value="Batterie"><span>Batterie</span></label>
+              <label class="part"><input type="checkbox" value="Bougies"><span>Bougies</span></label>
+              <label class="part"><input type="checkbox" value="Amortisseurs"><span>Amortisseurs</span></label>
+              <label class="part"><input type="checkbox" value="Rotules / biellettes"><span>Rotules / biellettes</span></label>
+              <label class="part"><input type="checkbox" value="Pneus"><span>Pneus</span></label>
+              <label class="part"><input type="checkbox" value="Balais essuie-glace"><span>Essuie-glaces</span></label>
+            </div>
+            <label class="notes">Notes / références
+              <textarea id="notes" rows="4" placeholder="ex. réf. plaquettes, dimensions pneus 195/55 R16…"></textarea>
+            </label>
+            <div class="sheet__actions">
+              <button class="btn btn--primary" id="copy-list" type="button">Copier la liste</button>
+              <button class="btn btn--ghost" id="print" type="button">Imprimer</button>
+            </div>
+            <p class="plate-status" id="copy-status" role="status" aria-live="polite"></p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/assets/atelier.js?v=6" defer></script>
+</body>
+</html>

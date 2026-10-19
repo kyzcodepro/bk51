@@ -40,6 +40,7 @@ export default async function handler(req, res) {
       cylindree: d.EngineSize ? text(d.EngineSize) : ext.CCm || '',
       annee: d.RegistrationYear || (ext.datePremiereMiseCirculation || '').slice(-4),
       kw: ext.puissanceDyn || ext.KW || '',
+      details: ext,
     });
   } catch {
     return res.status(502).json({ error: 'Service indisponible' });
