@@ -1,6 +1,6 @@
 // Coordonnées du garage : modifiez ces valeurs, elles sont reprises partout sur le site.
 const CONFIG = {
-  phone: '', // ex. '06 12 34 56 78'
+  phone: '07 49 59 12 08',
   email: '', // ex. 'contact@bkauto51.fr' (reçoit les demandes du formulaire)
 };
 
