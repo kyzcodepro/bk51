@@ -37,11 +37,30 @@ form.plaque.addEventListener('input', () => {
   const v = form.plaque.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
   form.plaque.value = /^[A-Z]{1,2}/.test(v) ? [v.slice(0, 2), v.slice(2, 5), v.slice(5, 7)].filter(Boolean).join('-') : v;
 });
+// Téléphone : numéro français (06…, 01…, +33…, 0033…), remis au format 06 12 34 56 78
+const telDigits = (v) => {
+  const d = v.replace(/[\s.\-()]/g, '').replace(/^(\+33|0033)/, '0');
+  return /^0[1-9]\d{8}$/.test(d) ? d : null;
+};
+const checkTel = () => {
+  const d = telDigits(form.tel.value);
+  form.tel.setCustomValidity(d || !form.tel.value ? '' : 'Numéro français attendu, ex. 06 12 34 56 78');
+  return d;
+};
+form.tel.addEventListener('input', checkTel);
+form.tel.addEventListener('blur', () => {
+  const d = checkTel();
+  if (d) form.tel.value = d.replace(/(\d{2})(?=\d)/g, '$1 ');
+});
+
 const submitBtn = form.querySelector('button[type=submit]');
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
+  checkTel();
   if (!form.checkValidity()) {
-    note.textContent = 'Merci de renseigner votre nom, votre téléphone, votre plaque et votre message.';
+    note.textContent = form.tel.validationMessage && form.tel.value
+      ? 'Numéro de téléphone invalide : un numéro français est attendu, ex. 06 12 34 56 78.'
+      : 'Merci de renseigner votre nom, votre téléphone, votre plaque et votre message.';
     form.reportValidity();
     return;
   }

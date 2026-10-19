@@ -18,6 +18,11 @@ export default async function handler(req, res) {
   if (!d.nom || !d.tel || !d.plaque || !d.message) {
     return res.status(400).json({ error: 'Champs obligatoires manquants' });
   }
+  const tel = d.tel.replace(/[\s.\-()]/g, '').replace(/^(\+33|0033)/, '0');
+  if (!/^0[1-9]\d{8}$/.test(tel)) {
+    return res.status(400).json({ error: 'Numéro de téléphone invalide' });
+  }
+  d.tel = tel.replace(/(\d{2})(?=\d)/g, '$1 ');
 
   const { RESEND_API_KEY, DEVIS_EMAIL, DEVIS_FROM } = process.env;
   if (!RESEND_API_KEY || !DEVIS_EMAIL) {

@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css?v=11">
+  <link rel="stylesheet" href="/assets/styles.css?v=12">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -235,7 +235,7 @@
         <form class="form" id="contact-form" novalidate data-reveal>
           <div class="form__row">
             <label>Nom<input name="nom" required autocomplete="name"></label>
-            <label>Téléphone<input name="tel" type="tel" required autocomplete="tel"></label>
+            <label>Téléphone<input name="tel" type="tel" inputmode="tel" required autocomplete="tel" placeholder="06 12 34 56 78" maxlength="20"></label>
           </div>
           <div class="form__plate">
             <span id="plaque-label">Plaque d'immatriculation</span>
@@ -281,6 +281,6 @@
     </div>
   </footer>
 
-  <script src="/assets/main.js?v=11" defer></script>
+  <script src="/assets/main.js?v=12" defer></script>
 </body>
 </html>
