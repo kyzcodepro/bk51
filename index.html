@@ -31,6 +31,7 @@
   </script>
 </head>
 <body>
+  <div class="progress" aria-hidden="true"></div>
   <header class="header" id="top">
     <div class="container header__inner">
       <a href="#top" class="logo" aria-label="BK AUTO 51, accueil">
@@ -44,6 +45,7 @@
         <a href="#services">Services</a>
         <a href="#pourquoi">Pourquoi nous</a>
         <a href="#avis">Avis</a>
+        <a href="#etapes">Étapes</a>
         <a href="#contact">Contact</a>
         <a href="tel:+33000000000" class="btn btn--primary btn--sm js-phone">Appeler</a>
       </nav>
@@ -52,64 +54,86 @@
 
   <main>
     <section class="hero">
+      <div class="hero__blobs" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="container hero__inner">
         <div class="hero__content">
-          <p class="eyebrow">Garage automobile · Châlons-en-Champagne (51)</p>
-          <h1>Votre voiture entre de bonnes mains.</h1>
-          <p class="lead">Vente de véhicules d'occasion, entretien et réparation toutes marques. Un service honnête, des prix clairs et un travail soigné, à Châlons-en-Champagne.</p>
-          <div class="hero__actions">
-            <a href="#contact" class="btn btn--primary">Demander un devis</a>
+          <p class="eyebrow anim-in" style="--d:0">Garage automobile · Châlons-en-Champagne (51)</p>
+          <h1 class="anim-in" style="--d:1">Votre <span class="rotator" aria-live="polite"><span class="rotator__word">voiture</span></span><br>entre de bonnes mains.</h1>
+          <p class="lead anim-in" style="--d:2">Vente de véhicules d'occasion, entretien et réparation toutes marques. Un service honnête, des prix clairs et un travail soigné, à Châlons-en-Champagne.</p>
+          <div class="hero__actions anim-in" style="--d:3">
+            <a href="#contact" class="btn btn--primary btn--shine">Demander un devis <span class="btn__arrow">→</span></a>
             <a href="#services" class="btn btn--ghost">Nos services</a>
           </div>
-          <ul class="hero__badges">
+          <ul class="hero__badges anim-in" style="--d:4">
             <li>Devis gratuit</li>
             <li>Toutes marques</li>
             <li>Véhicules contrôlés</li>
           </ul>
         </div>
-        <div class="hero__card" aria-hidden="true">
-          <svg viewBox="0 0 320 160" class="hero__car">
-            <path d="M30 112c0-10 6-18 16-20l40-8 34-30c6-5 13-8 21-8h70c9 0 17 4 23 10l26 28 34 6c11 2 19 11 19 22v10c0 5-4 9-9 9H39c-5 0-9-4-9-9z" fill="currentColor" opacity=".9"/>
-            <path d="M126 58h44v32h-78zM180 58h34c6 0 11 2 15 6l24 26h-73z" fill="var(--bg)" opacity=".85"/>
-            <circle cx="88" cy="128" r="22" fill="var(--ink)"/><circle cx="88" cy="128" r="9" fill="var(--accent)"/>
-            <circle cx="244" cy="128" r="22" fill="var(--ink)"/><circle cx="244" cy="128" r="9" fill="var(--accent)"/>
-          </svg>
+        <div class="hero__card anim-in" style="--d:2" aria-hidden="true">
+          <div class="scene">
+            <div class="scene__sun"></div>
+            <div class="scene__hills"></div>
+            <div class="scene__car">
+              <span class="speed"></span><span class="speed"></span><span class="speed"></span>
+              <svg viewBox="0 0 320 160" class="hero__car">
+                <g class="car__body">
+                  <path d="M30 112c0-10 6-18 16-20l40-8 34-30c6-5 13-8 21-8h70c9 0 17 4 23 10l26 28 34 6c11 2 19 11 19 22v10c0 5-4 9-9 9H39c-5 0-9-4-9-9z" fill="currentColor"/>
+                  <path d="M126 58h44v32h-78zM180 58h34c6 0 11 2 15 6l24 26h-73z" fill="var(--bg)" opacity=".85"/>
+                  <rect x="292" y="104" width="14" height="7" rx="3" fill="var(--accent)" class="car__light"/>
+                </g>
+                <g class="wheel" style="transform-origin:88px 128px"><circle cx="88" cy="128" r="22" fill="var(--ink)"/><circle cx="88" cy="128" r="9" fill="var(--accent)"/><path d="M88 108v40M68 128h40" stroke="var(--bg-alt)" stroke-width="3"/></g>
+                <g class="wheel" style="transform-origin:244px 128px"><circle cx="244" cy="128" r="22" fill="var(--ink)"/><circle cx="244" cy="128" r="9" fill="var(--accent)"/><path d="M244 108v40M224 128h40" stroke="var(--bg-alt)" stroke-width="3"/></g>
+              </svg>
+            </div>
+            <div class="scene__road"></div>
+          </div>
           <div class="hero__stat"><strong>Châlons</strong><span>3 Rue Adolphe Willette</span></div>
+          <div class="chip chip--a">🔧 Entretien</div>
+          <div class="chip chip--b">✓ Devis gratuit</div>
         </div>
       </div>
+      <a href="#services" class="scroll-cue" aria-label="Défiler vers les services"><span></span></a>
     </section>
+
+    <div class="marquee-wrap" aria-hidden="true"><div class="marquee">
+      <div class="marquee__track">
+        <span>Vente d'occasion</span><span>Entretien</span><span>Révision</span><span>Diagnostic</span><span>Freins</span><span>Embrayage</span><span>Pneus</span><span>Climatisation</span><span>Pré-contrôle technique</span><span>Reprise</span>
+        <span>Vente d'occasion</span><span>Entretien</span><span>Révision</span><span>Diagnostic</span><span>Freins</span><span>Embrayage</span><span>Pneus</span><span>Climatisation</span><span>Pré-contrôle technique</span><span>Reprise</span>
+      </div>
+    </div></div>
 
     <section class="section" id="services">
       <div class="container">
-        <p class="eyebrow">Ce que nous faisons</p>
-        <h2>Nos services</h2>
+        <p class="eyebrow" data-reveal>Ce que nous faisons</p>
+        <h2 data-reveal>Tout pour votre véhicule, <span class="hl">au même endroit</span>.</h2>
         <div class="grid grid--3">
-          <article class="card">
+          <article class="card" data-reveal>
             <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M5 17h14M6 17l1.5-5h9L18 17M8 12l1-3h6l1 3"/><circle cx="8" cy="18" r="1.5"/><circle cx="16" cy="18" r="1.5"/></svg></div>
             <h3>Vente de véhicules</h3>
             <p>Un choix de véhicules d'occasion sélectionnés et vérifiés avant la vente. Reprise de votre ancien véhicule possible.</p>
           </article>
-          <article class="card">
+          <article class="card" data-reveal>
             <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div>
             <h3>Entretien & révision</h3>
             <p>Vidange, filtres, freins, distribution, climatisation : un entretien suivi selon les préconisations constructeur.</p>
           </article>
-          <article class="card">
+          <article class="card" data-reveal>
             <div class="card__icon"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 12h3l1-2 2 4 1-2h3"/></svg></div>
             <h3>Diagnostic électronique</h3>
             <p>Lecture des codes défaut et recherche de panne pour identifier précisément l'origine d'un problème.</p>
           </article>
-          <article class="card">
+          <article class="card" data-reveal>
             <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="6"/></svg></div>
             <h3>Mécanique générale</h3>
             <p>Embrayage, échappement, suspension, moteur : nous réparons votre véhicule, quelle que soit sa marque.</p>
           </article>
-          <article class="card">
+          <article class="card" data-reveal>
             <div class="card__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 4v5M12 15v5M4 12h5M15 12h5"/></svg></div>
             <h3>Pneumatiques</h3>
             <p>Montage, équilibrage et remplacement de pneus été, hiver ou 4 saisons, au meilleur rapport qualité/prix.</p>
           </article>
-          <article class="card">
+          <article class="card" data-reveal>
             <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></div>
             <h3>Préparation contrôle technique</h3>
             <p>Pré-contrôle et remise en état pour passer le contrôle technique sereinement, sans mauvaise surprise.</p>
@@ -121,34 +145,49 @@
     <section class="section section--alt" id="pourquoi">
       <div class="container split">
         <div>
-          <p class="eyebrow">Pourquoi BK AUTO 51</p>
-          <h2>Un garage de proximité qui vous dit les choses clairement.</h2>
-          <p class="muted">Pas de jargon, pas de travaux inutiles. Nous vous expliquons ce qui doit être fait, pourquoi, et combien cela coûte, avant de toucher à votre véhicule.</p>
+          <p class="eyebrow" data-reveal>Pourquoi BK AUTO 51</p>
+          <h2 data-reveal>Un garage de proximité qui vous dit les choses <span class="hl">clairement</span>.</h2>
+          <p class="muted big" data-reveal>Pas de jargon, pas de travaux inutiles. Nous vous expliquons ce qui doit être fait, pourquoi, et combien cela coûte, avant de toucher à votre véhicule.</p>
         </div>
         <ul class="checklist">
-          <li><strong>Devis gratuit et détaillé</strong><span>Vous validez le prix avant toute intervention.</span></li>
-          <li><strong>Toutes marques</strong><span>Citadines, berlines, SUV et utilitaires légers.</span></li>
-          <li><strong>Pièces de qualité</strong><span>Origine ou qualité équivalente, selon votre budget.</span></li>
-          <li><strong>Conseil personnalisé</strong><span>Achat, entretien ou réparation : on vous oriente au mieux.</span></li>
+          <li data-reveal><strong>Devis gratuit et détaillé</strong><span>Vous validez le prix avant toute intervention.</span></li>
+          <li data-reveal><strong>Toutes marques</strong><span>Citadines, berlines, SUV et utilitaires légers.</span></li>
+          <li data-reveal><strong>Pièces de qualité</strong><span>Origine ou qualité équivalente, selon votre budget.</span></li>
+          <li data-reveal><strong>Conseil personnalisé</strong><span>Achat, entretien ou réparation : on vous oriente au mieux.</span></li>
         </ul>
+      </div>
+    </section>
+
+    <section class="section" id="etapes">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Comment ça se passe</p>
+        <h2 data-reveal>Simple, en <span class="hl">4 étapes</span>.</h2>
+        <ol class="steps">
+          <li data-reveal><span class="steps__num">1</span><h3>Vous nous contactez</h3><p>Par téléphone, via le formulaire ou directement au garage.</p></li>
+          <li data-reveal><span class="steps__num">2</span><h3>On diagnostique</h3><p>Nous examinons votre véhicule et identifions ce qui doit être fait.</p></li>
+          <li data-reveal><span class="steps__num">3</span><h3>Vous validez le devis</h3><p>Un prix clair et détaillé, sans surprise. Rien n'est fait sans votre accord.</p></li>
+          <li data-reveal><span class="steps__num">4</span><h3>Vous repartez serein</h3><p>Travail soigné, explications à la clé, et conseils pour la suite.</p></li>
+        </ol>
       </div>
     </section>
 
     <section class="section" id="avis">
       <div class="container">
+        <div class="cta-box" data-reveal>
         <p class="eyebrow">Ils nous font confiance</p>
-        <h2>Vos avis comptent</h2>
+        <h2>Vos avis comptent <span class="stars" aria-hidden="true"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></span></h2>
         <p class="muted narrow">Vous êtes passé chez nous ? Partagez votre expérience sur notre fiche Google, cela aide d'autres conducteurs de la région à nous trouver.</p>
         <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=BK+AUTO+51+3+rue+Adolphe+Willette+51000+Ch%C3%A2lons-en-Champagne" target="_blank" rel="noopener">Voir notre fiche Google</a>
+        </div>
       </div>
     </section>
 
     <section class="section section--dark" id="contact">
       <div class="container split">
         <div>
-          <p class="eyebrow">Contact</p>
-          <h2>Parlons de votre véhicule</h2>
-          <ul class="contact-list">
+          <p class="eyebrow" data-reveal>Contact</p>
+          <h2 data-reveal>Parlons de votre véhicule</h2>
+          <ul class="contact-list" data-reveal>
             <li>
               <span class="contact-list__label">Adresse</span>
               <a href="https://www.google.com/maps/search/?api=1&amp;query=BK+AUTO+51+3+rue+Adolphe+Willette+51000+Ch%C3%A2lons-en-Champagne" target="_blank" rel="noopener">3 Rue Adolphe Willette<br>51000 Châlons-en-Champagne</a>
@@ -163,7 +202,7 @@
             </li>
           </ul>
         </div>
-        <form class="form" id="contact-form" novalidate>
+        <form class="form" id="contact-form" novalidate data-reveal>
           <div class="form__row">
             <label>Nom<input name="nom" required autocomplete="name"></label>
             <label>Téléphone<input name="tel" type="tel" required autocomplete="tel"></label>
@@ -184,7 +223,7 @@
           <p class="form__note" role="status" aria-live="polite"></p>
         </form>
       </div>
-      <div class="container map">
+      <div class="container map" data-reveal>
         <iframe title="Plan d'accès BK AUTO 51" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
           src="https://maps.google.com/maps?q=BK%20AUTO%2051%2C%203%20Rue%20Adolphe%20Willette%2C%2051000%20Ch%C3%A2lons-en-Champagne&z=15&output=embed"></iframe>
       </div>
