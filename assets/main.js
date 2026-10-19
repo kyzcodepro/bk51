@@ -60,17 +60,6 @@ form.addEventListener('submit', (e) => {
 // ---------- Animations ----------
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Barre de lecture + ombre de l'en-tête
-const progress = document.querySelector('.progress');
-const header = document.querySelector('.header');
-const onScroll = () => {
-  const max = document.documentElement.scrollHeight - innerHeight;
-  progress.style.setProperty('--p', max > 0 ? scrollY / max : 0);
-  header.classList.toggle('is-scrolled', scrollY > 10);
-};
-addEventListener('scroll', onScroll, { passive: true });
-onScroll();
-
 // Apparition au défilement, avec décalage entre éléments voisins
 const reveals = document.querySelectorAll('[data-reveal]');
 reveals.forEach((el) => {
@@ -86,39 +75,6 @@ if ('IntersectionObserver' in window && !reduce) {
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach((el) => io.observe(el));
-
-  const steps = document.querySelector('.steps');
-  const lineIo = new IntersectionObserver(([e]) => {
-    if (e.isIntersecting) { steps.classList.add('is-drawn'); lineIo.disconnect(); }
-  }, { threshold: 0.3 });
-  lineIo.observe(steps);
 } else {
   reveals.forEach((el) => el.classList.add('is-visible'));
 }
-
-// Mot qui change dans le titre
-const word = document.querySelector('.rotator__word');
-const words = ['voiture', 'citadine', 'familiale', 'SUV', 'utilitaire'];
-let w = 0;
-if (!reduce) {
-  setInterval(() => {
-    word.classList.remove('in');
-    word.classList.add('out');
-    setTimeout(() => {
-      w = (w + 1) % words.length;
-      word.textContent = words[w];
-      word.classList.remove('out');
-      word.classList.add('in');
-    }, 350);
-  }, 2600);
-}
-
-// Halo des cartes qui suit la souris
-document.querySelectorAll('.card').forEach((card) => {
-  card.addEventListener('pointermove', (e) => {
-    const r = card.getBoundingClientRect();
-    card.style.setProperty('--mx', `${e.clientX - r.left}px`);
-    card.style.setProperty('--my', `${e.clientY - r.top}px`);
-  });
-});
-
