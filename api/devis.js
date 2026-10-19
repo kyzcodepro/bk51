@@ -49,7 +49,11 @@ export default async function handler(req, res) {
       }),
       signal: AbortSignal.timeout(10000),
     });
-    if (!r.ok) return res.status(502).json({ error: 'Envoi impossible' });
+    if (!r.ok) {
+      const detail = (await r.json().catch(() => ({}))).message || `Resend ${r.status}`;
+      console.error('Resend:', r.status, detail);
+      return res.status(502).json({ error: 'Envoi impossible', detail });
+    }
     return res.status(200).json({ ok: true });
   } catch {
     return res.status(502).json({ error: 'Envoi impossible' });
