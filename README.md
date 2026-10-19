@@ -10,3 +10,11 @@ Site statique (HTML/CSS/JS, sans build) du garage BK AUTO 51 à Châlons-en-Cham
 ## À personnaliser
 - `assets/main.js` → `CONFIG.phone` et `CONFIG.email` (téléphone affiché + destinataire du formulaire).
 - `index.html` → horaires (section Contact), textes des services.
+
+## Pièces par plaque d'immatriculation
+La section « Pièces » identifie le véhicule via `api/vehicule.js` (fonction Vercel) et le fournisseur RegCheck.
+1. Créer un compte sur https://www.regcheck.org.uk (service payant à la requête, quelques recherches d'essai offertes).
+2. Vercel → Settings → Environment Variables → ajouter `REGCHECK_USERNAME` = votre identifiant RegCheck.
+3. Redéployer.
+
+Sans cette variable, le site fonctionne quand même : le client choisit ses pièces et la plaque est transmise avec la demande de devis.

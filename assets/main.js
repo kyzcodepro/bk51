@@ -40,7 +40,7 @@ form.addEventListener('submit', (e) => {
     return;
   }
   const d = Object.fromEntries(new FormData(form));
-  const body = `Nom : ${d.nom}\nTéléphone : ${d.tel}\nVéhicule : ${d.vehicule || '-'}\n\n${d.message}`;
+  const body = `Nom : ${d.nom}\nTéléphone : ${d.tel}\nPlaque : ${d.plaque || '-'}\nVéhicule : ${d.vehicule || '-'}\n\n${d.message}`;
   if (!CONFIG.email) {
     note.textContent = CONFIG.phone
       ? `Envoi en ligne bientôt disponible. Appelez-nous au ${CONFIG.phone}.`
@@ -114,4 +114,70 @@ document.querySelectorAll('.card').forEach((card) => {
     card.style.setProperty('--mx', `${e.clientX - r.left}px`);
     card.style.setProperty('--my', `${e.clientY - r.top}px`);
   });
+});
+
+// ---------- Pièces par plaque ----------
+const plateForm = document.getElementById('plate-form');
+const plateInput = document.getElementById('plate-input');
+const plateStatus = document.getElementById('plate-status');
+const vehicleBox = document.getElementById('vehicle');
+const partsPick = document.getElementById('parts-pick');
+const quoteBtn = document.getElementById('parts-quote');
+let vehicle = null;
+
+// Mise en forme AA-123-AA pendant la saisie
+plateInput.addEventListener('input', () => {
+  const v = plateInput.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+  plateInput.value = /^[A-Z]{1,2}/.test(v)
+    ? [v.slice(0, 2), v.slice(2, 5), v.slice(5, 7)].filter(Boolean).join('-')
+    : v;
+});
+
+const showParts = () => {
+  partsPick.hidden = false;
+  requestAnimationFrame(() => partsPick.classList.add('is-in'));
+};
+
+plateForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const plaque = plateInput.value.replace(/[^A-Z0-9]/g, '');
+  if (!/^([A-Z]{2}\d{3}[A-Z]{2}|\d{1,4}[A-Z]{1,3}\d{2})$/.test(plaque)) {
+    plateStatus.textContent = 'Format attendu : AB-123-CD';
+    plateForm.classList.remove('shake'); void plateForm.offsetWidth; plateForm.classList.add('shake');
+    return;
+  }
+  plateForm.classList.add('is-loading');
+  plateStatus.textContent = 'Recherche de votre véhicule…';
+  vehicleBox.hidden = true;
+  vehicle = { plaque: plateInput.value };
+  try {
+    const r = await fetch(`/api/vehicule?plaque=${plaque}`);
+    if (!r.ok) throw new Error(r.status);
+    const d = await r.json();
+    vehicle = { ...d, plaque: plateInput.value };
+    document.getElementById('vehicle-title').textContent = [d.marque, d.modele].filter(Boolean).join(' ') || d.description;
+    document.getElementById('vehicle-meta').textContent = [d.version, d.energie, d.cylindree && `${d.cylindree} cm³`, d.annee].filter(Boolean).join(' · ');
+    vehicleBox.hidden = false;
+    plateStatus.textContent = 'Véhicule identifié ✓';
+  } catch {
+    plateStatus.textContent = 'Pas d\'identification automatique pour le moment : pas de souci, choisissez vos pièces, on s\'occupe du reste avec votre plaque.';
+  } finally {
+    plateForm.classList.remove('is-loading');
+    showParts();
+  }
+});
+
+partsPick.addEventListener('change', () => {
+  quoteBtn.disabled = !partsPick.querySelector('input:checked');
+});
+
+quoteBtn.addEventListener('click', () => {
+  const parts = [...partsPick.querySelectorAll('input:checked')].map((i) => i.value);
+  form.plaque.value = vehicle?.plaque || '';
+  const desc = [vehicle?.marque, vehicle?.modele, vehicle?.version, vehicle?.annee].filter(Boolean).join(' ');
+  if (desc) form.vehicule.value = desc;
+  form.objet.value = 'Devis pièces';
+  form.message.value = `Bonjour, je souhaite un devis pour :\n- ${parts.join('\n- ')}`;
+  document.getElementById('contact').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+  setTimeout(() => form.nom.focus({ preventScroll: true }), 700);
 });
