@@ -1,2 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /atelier
+
+Sitemap: https://www.bkauto51.com/sitemap.xml

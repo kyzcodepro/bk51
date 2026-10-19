@@ -3,7 +3,7 @@
 //   RESEND_API_KEY  clé API Resend
 //   DEVIS_EMAIL     adresse qui reçoit les demandes
 //   DEVIS_FROM      expéditeur (facultatif ; par défaut l'adresse de test Resend,
-//                   à remplacer par ex. "BK AUTO 51 <devis@bkauto51.fr>" une fois le domaine vérifié)
+//                   à remplacer par ex. "BK AUTO 51 <devis@bkauto51.com>" une fois le domaine vérifié)
 
 const FIELDS = { nom: 100, tel: 30, plaque: 12, vehicule: 120, objet: 60, message: 3000 };
 

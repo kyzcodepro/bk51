@@ -27,5 +27,5 @@ Le formulaire envoie la demande via `api/devis.js` et le service Resend (gratuit
    - `DEVIS_EMAIL` = l'adresse qui reçoit les devis (celle du compte Resend tant que le domaine n'est pas vérifié)
 4. Redéployer.
 
-Avec un domaine (ex. bkauto51.fr) : le vérifier dans Resend → Domains, puis ajouter
-`DEVIS_FROM` = `BK AUTO 51 <devis@bkauto51.fr>` pour envoyer depuis votre domaine.
+Avec un domaine (ex. bkauto51.com) : le vérifier dans Resend → Domains, puis ajouter
+`DEVIS_FROM` = `BK AUTO 51 <devis@bkauto51.com>` pour envoyer depuis votre domaine.
