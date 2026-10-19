@@ -60,7 +60,9 @@ form.addEventListener('submit', async (e) => {
   if (!form.checkValidity()) {
     note.textContent = form.tel.validationMessage && form.tel.value
       ? 'Numéro de téléphone invalide : un numéro français est attendu, ex. 06 12 34 56 78.'
-      : 'Merci de renseigner votre nom, votre téléphone, votre plaque et votre message.';
+      : form.email.validity.typeMismatch
+        ? 'Adresse e-mail invalide, ex. vous@exemple.fr.'
+        : 'Merci de renseigner votre nom, votre téléphone, votre e-mail, votre plaque et votre message.';
     form.reportValidity();
     return;
   }
@@ -73,8 +75,12 @@ form.addEventListener('submit', async (e) => {
       body: JSON.stringify(Object.fromEntries(new FormData(form))),
     });
     if (!r.ok) throw new Error();
+    const { confirmed } = await r.json();
+    const email = form.email.value;
     form.reset();
-    note.textContent = 'Demande envoyée ✓ On vous rappelle rapidement.';
+    note.textContent = confirmed
+      ? `Demande envoyée ✓ Une confirmation vous a été envoyée à ${email}.`
+      : 'Demande envoyée ✓ On vous rappelle rapidement.';
   } catch {
     note.textContent = `L'envoi n'a pas fonctionné. Appelez-nous au ${CONFIG.phone}.`;
   } finally {
