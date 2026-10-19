@@ -1,7 +1,6 @@
 // Coordonnées du garage : modifiez ces valeurs, elles sont reprises partout sur le site.
 const CONFIG = {
   phone: '07 49 59 12 08',
-  email: '', // ex. 'contact@bkauto51.fr' (reçoit les demandes du formulaire)
 };
 
 const telHref = (n) => 'tel:' + n.replace(/[^\d+]/g, '').replace(/^0/, '+33');
@@ -29,7 +28,7 @@ nav.addEventListener('click', (e) => {
   }
 });
 
-// Formulaire : ouvre le client mail avec la demande pré-remplie (aucun serveur requis)
+// Formulaire de devis : envoyé par e-mail via /api/devis
 const form = document.getElementById('contact-form');
 const note = form.querySelector('.form__note');
 
@@ -38,23 +37,30 @@ form.plaque.addEventListener('input', () => {
   const v = form.plaque.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
   form.plaque.value = /^[A-Z]{1,2}/.test(v) ? [v.slice(0, 2), v.slice(2, 5), v.slice(5, 7)].filter(Boolean).join('-') : v;
 });
-form.addEventListener('submit', (e) => {
+const submitBtn = form.querySelector('button[type=submit]');
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
   if (!form.checkValidity()) {
     note.textContent = 'Merci de renseigner votre nom, votre téléphone, votre plaque et votre message.';
     form.reportValidity();
     return;
   }
-  const d = Object.fromEntries(new FormData(form));
-  const body = `Nom : ${d.nom}\nTéléphone : ${d.tel}\nPlaque : ${d.plaque || '-'}\nVéhicule : ${d.vehicule || '-'}\n\n${d.message}`;
-  if (!CONFIG.email) {
-    note.textContent = CONFIG.phone
-      ? `Envoi en ligne bientôt disponible. Appelez-nous au ${CONFIG.phone}.`
-      : 'Envoi en ligne bientôt disponible. Passez nous voir au garage.';
-    return;
+  submitBtn.disabled = true;
+  note.textContent = 'Envoi en cours…';
+  try {
+    const r = await fetch('/api/devis', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(Object.fromEntries(new FormData(form))),
+    });
+    if (!r.ok) throw new Error();
+    form.reset();
+    note.textContent = 'Demande envoyée ✓ On vous rappelle rapidement.';
+  } catch {
+    note.textContent = `L'envoi n'a pas fonctionné. Appelez-nous au ${CONFIG.phone}.`;
+  } finally {
+    submitBtn.disabled = false;
   }
-  window.location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent(d.objet + ' - ' + d.nom)}&body=${encodeURIComponent(body)}`;
-  note.textContent = 'Votre messagerie va s’ouvrir pour envoyer la demande.';
 });
 
 // ---------- Animations ----------

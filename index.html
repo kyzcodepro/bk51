@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css?v=10">
+  <link rel="stylesheet" href="/assets/styles.css?v=11">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -256,6 +256,7 @@
             </select>
           </label>
           <label>Message<textarea name="message" rows="4" required placeholder="Décrivez le problème : bruit, voyant, symptôme…"></textarea></label>
+          <label class="hp" aria-hidden="true">Site<input name="site" tabindex="-1" autocomplete="off"></label>
           <button type="submit" class="btn btn--yellow btn--block">Envoyer la demande</button>
           <p class="form__note" role="status" aria-live="polite"></p>
         </form>
@@ -277,6 +278,6 @@
     </div>
   </footer>
 
-  <script src="/assets/main.js?v=10" defer></script>
+  <script src="/assets/main.js?v=11" defer></script>
 </body>
 </html>
