@@ -2,8 +2,7 @@
 // Variables d'environnement :
 //   RESEND_API_KEY  clé API Resend
 //   DEVIS_EMAIL     adresse(s) qui reçoivent les demandes, séparées par une virgule
-//   DEVIS_FROM      expéditeur (facultatif ; par défaut l'adresse de test Resend,
-//                   à remplacer par ex. "BK AUTO 51 <devis@bkauto51.com>" une fois le domaine vérifié)
+//   DEVIS_FROM      expéditeur (facultatif ; par défaut devis@bkauto51.com, domaine vérifié dans Resend)
 
 const FIELDS = { nom: 100, tel: 30, plaque: 12, vehicule: 120, objet: 60, message: 3000 };
 
@@ -42,7 +41,7 @@ export default async function handler(req, res) {
       method: 'POST',
       headers: { Authorization: `Bearer ${RESEND_API_KEY}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        from: DEVIS_FROM || 'BK AUTO 51 <onboarding@resend.dev>',
+        from: DEVIS_FROM || 'BK AUTO 51 <devis@bkauto51.com>',
         to: DEVIS_EMAIL.split(',').map((e) => e.trim()).filter(Boolean),
         subject: `Devis ${d.plaque} – ${d.objet || 'Demande'} – ${d.nom}`,
         text,
