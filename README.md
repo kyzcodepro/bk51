@@ -24,7 +24,7 @@ Le formulaire envoie la demande via `api/devis.js` et le service Resend (gratuit
 2. Resend → API Keys → Create API Key.
 3. Vercel → Settings → Environment Variables :
    - `RESEND_API_KEY` = la clé
-   - `DEVIS_EMAIL` = l'adresse qui reçoit les devis (celle du compte Resend tant que le domaine n'est pas vérifié)
+   - `DEVIS_EMAIL` = l'adresse qui reçoit les devis ; plusieurs possibles, séparées par une virgule (ex. `a@gmail.com, b@gmail.com`)
 4. Redéployer.
 
 Avec un domaine (ex. bkauto51.com) : le vérifier dans Resend → Domains, puis ajouter
