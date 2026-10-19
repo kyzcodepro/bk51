@@ -1,6 +1,6 @@
 # BK AUTO 51 – site vitrine
 
-Site statique (HTML/CSS/JS, sans build) du garage BK AUTO 51 à Reims, prêt pour Vercel.
+Site statique (HTML/CSS/JS, sans build) du garage BK AUTO 51 à Châlons-en-Champagne, prêt pour Vercel.
 
 ## Déployer sur Vercel
 1. Sur vercel.com : **Add New → Project**, importer le dépôt `bk51`.
