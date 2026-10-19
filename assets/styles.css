@@ -337,10 +337,38 @@ p { margin: 0 0 1rem; }
 .stars i:nth-child(4) { animation-delay: .3s !important; } .stars i:nth-child(5) { animation-delay: .4s !important; }
 @keyframes star { to { opacity: 1; transform: none; } }
 
+/* Zone d'intervention */
+.split--center { align-items: center; }
+.towns { list-style: none; padding: 0; margin: 1.6rem 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.towns li { padding: .4rem .85rem; border-radius: 999px; background: var(--bg); border: 1px solid var(--line); font-weight: 600; font-size: .92rem; transition: border-color .2s ease, transform .2s ease; }
+.towns li:hover { border-color: var(--accent); transform: translateY(-2px); }
+.towns li:first-child { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.towns__more { color: var(--muted); font-style: italic; }
+.radar { max-width: 440px; width: 100%; justify-self: center; }
+.radar svg { width: 100%; height: auto; overflow: visible; }
+.radar__ring { fill: none; stroke: var(--line); stroke-width: 1.5; stroke-dasharray: 4 6; }
+.radar__ring:first-child { fill: color-mix(in srgb, var(--accent) 7%, transparent); stroke: var(--accent); stroke-dasharray: none; stroke-width: 2; }
+.radar__pulse { fill: none; stroke: var(--accent); stroke-width: 2; transform-origin: 160px 160px; transform: scale(.1); opacity: 0; animation: radarPulse 3.6s ease-out infinite; }
+.radar__pulse--2 { animation-delay: 1.8s; }
+@keyframes radarPulse { 0% { transform: scale(.1); opacity: .9; } 100% { transform: scale(1); opacity: 0; } }
+.radar__sweep { transform-origin: 160px 160px; animation: sweep 6s linear infinite; }
+.radar__sweep path { fill: color-mix(in srgb, var(--accent) 14%, transparent); }
+@keyframes sweep { to { transform: rotate(360deg); } }
+.radar__towns circle { fill: var(--ink); }
+.radar__towns text, .radar__city, .radar__km { font: 600 12px Inter, sans-serif; fill: var(--muted); }
+.radar__km { fill: var(--accent); font-weight: 800; }
+.radar__city { fill: var(--ink); font-weight: 800; font-size: 14px; }
+.radar__towns g { opacity: 0; transform: translateY(6px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(var(--t) * 150ms + .4s); }
+.radar.is-visible .radar__towns g { opacity: 1; transform: none; }
+.radar__home circle { fill: var(--accent); }
+.radar__home path { fill: var(--accent-ink); }
+.radar__home { transform-origin: 160px 160px; animation: homeBeat 2s ease-in-out infinite; }
+@keyframes homeBeat { 50% { transform: scale(1.12); } }
+
 /* Mouvement réduit */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .anim-in, [data-reveal], .stars i { opacity: 1 !important; transform: none !important; }
+  .anim-in, [data-reveal], .stars i, .radar__towns g { opacity: 1 !important; transform: none !important; }
   .hl { background-size: 100% 100% !important; }
   .steps { --line-p: 1; }
   html { scroll-behavior: auto; }
