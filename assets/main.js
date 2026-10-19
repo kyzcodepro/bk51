@@ -32,10 +32,16 @@ nav.addEventListener('click', (e) => {
 // Formulaire : ouvre le client mail avec la demande pré-remplie (aucun serveur requis)
 const form = document.getElementById('contact-form');
 const note = form.querySelector('.form__note');
+
+// Plaque : mise en forme AA-123-AA pendant la saisie
+form.plaque.addEventListener('input', () => {
+  const v = form.plaque.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+  form.plaque.value = /^[A-Z]{1,2}/.test(v) ? [v.slice(0, 2), v.slice(2, 5), v.slice(5, 7)].filter(Boolean).join('-') : v;
+});
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   if (!form.checkValidity()) {
-    note.textContent = 'Merci de renseigner votre nom, votre téléphone et votre message.';
+    note.textContent = 'Merci de renseigner votre nom, votre téléphone, votre plaque et votre message.';
     form.reportValidity();
     return;
   }

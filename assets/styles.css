@@ -338,6 +338,28 @@ p { margin: 0 0 1rem; }
 .stars i:nth-child(4) { animation-delay: .3s !important; } .stars i:nth-child(5) { animation-delay: .4s !important; }
 @keyframes star { to { opacity: 1; transform: none; } }
 
+/* Plaque d'immatriculation (formulaire de devis + atelier) */
+.plate {
+  display: flex; align-items: stretch; height: 64px; border: 3px solid #111; border-radius: 10px; overflow: hidden;
+  background: #fff; box-shadow: 0 10px 30px rgba(15, 23, 42, .12); cursor: text; transition: transform .2s ease, box-shadow .2s ease;
+}
+.plate:focus-within { transform: translateY(-2px) scale(1.02); box-shadow: 0 16px 40px color-mix(in srgb, var(--accent) 35%, transparent); }
+.plate__eu, .plate__dep { display: grid; place-items: center; width: 42px; background: #1d4ed8; color: #fff; font-weight: 800; font-size: 1rem; line-height: 1; }
+.plate__eu { align-content: center; gap: 4px; }
+.plate__stars { color: #facc15; font-size: .8rem; }
+.plate__dep { font-size: .95rem; }
+.plate input {
+  width: 240px; border: 0; outline: 0; background: transparent; color: #111; text-align: center;
+  font: 800 1.9rem/1 "Arial Narrow", Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase;
+}
+.plate input::placeholder { color: #c4c8d0; }
+@media (max-width: 520px) { .plate { width: 100%; } .plate input { width: 100%; min-width: 0; font-size: 1.6rem; } .plate-form .btn { width: 100%; } }
+.form label.plate { display: flex; gap: 0; height: 56px; box-shadow: none; border-width: 2.5px; }
+.form .plate input { width: 100%; min-width: 0; flex: 1; font-size: 1.6rem; padding: 0; border: 0; background: transparent; border-radius: 0; }
+.form .plate input:focus { outline: 0; }
+.form .plate__eu, .form .plate__dep { width: 36px; }
+.form__plate { display: grid; gap: 6px; font-weight: 600; font-size: .9rem; }
+
 /* Zone d'intervention */
 .split--center { align-items: center; }
 .towns { list-style: none; padding: 0; margin: 1.6rem 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
