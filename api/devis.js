@@ -131,7 +131,7 @@ export default async function handler(req, res) {
     const r = await send(RESEND_API_KEY, {
       from,
       to: [d.email],
-      reply_to: DEVIS_EMAIL.split(',')[0].trim(),
+      reply_to: 'devis@bkauto51.com',
       subject: 'BK AUTO 51 – Nous avons bien reçu votre demande de devis',
       ...confirmation(d),
     });
