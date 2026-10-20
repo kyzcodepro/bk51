@@ -2,7 +2,10 @@
 // Définir la variable d'environnement ATELIER_PASSWORD dans Vercel.
 
 export const config = {
-  matcher: ['/atelier', '/atelier.html', '/assets/atelier.js', '/api/vehicule'],
+  matcher: [
+    '/atelier', '/atelier.html', '/assets/atelier.js', '/api/vehicule',
+    '/statistiques', '/statistiques.html', '/assets/stats.js', '/api/stats',
+  ],
 };
 
 export default function middleware(request) {

@@ -29,3 +29,10 @@ Le formulaire envoie la demande via `api/devis.js` et le service Resend (gratuit
 
 Avec un domaine (ex. bkauto51.com) : le vérifier dans Resend → Domains, puis ajouter
 `DEVIS_FROM` = `BK AUTO 51 <devis@bkauto51.com>` pour envoyer depuis votre domaine.
+
+## Statistiques (privé)
+Tableau de bord sur `/statistiques` (même mot de passe que l'atelier) : visites, appels, clics « devis »,
+devis envoyés, itinéraires, clics « avis », taux de contact. Comptage anonyme, sans cookie.
+1. Vercel → Storage (ou Marketplace) → Upstash for Redis → Create (offre gratuite) → Connect au projet.
+   Cela crée automatiquement `KV_REST_API_URL` et `KV_REST_API_TOKEN`.
+2. Redéployer.

@@ -5,6 +5,8 @@
 //   DEVIS_EMAIL     adresse(s) qui reçoivent les demandes, séparées par une virgule
 //   DEVIS_FROM      expéditeur (facultatif ; par défaut devis@bkauto51.com, domaine vérifié dans Resend)
 
+import { incr } from './_stats.js';
+
 const FIELDS = { nom: 100, tel: 30, email: 254, plaque: 12, vehicule: 120, objet: 60, message: 3000 };
 const OBJETS = [
   'Demande de devis', 'Entretien / révision', 'Réparation / diagnostic', 'Freinage',
@@ -120,6 +122,8 @@ export default async function handler(req, res) {
   } catch {
     return res.status(502).json({ error: 'Envoi impossible' });
   }
+
+  await incr('devis_envoye').catch((e) => console.error('stats:', e.message));
 
   // La demande est arrivée au garage : un échec de la confirmation ne doit pas faire échouer la requête.
   let confirmed = false;

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Statistiques · BK AUTO 51</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css?v=14">
+  <link rel="stylesheet" href="/assets/atelier.css?v=14">
+</head>
+<body class="atelier">
+  <header class="header">
+    <div class="container header__inner">
+      <a href="/" class="logo" aria-label="Retour au site">
+        <span class="logo__bk">BK</span><span class="logo__rest">AUTO&nbsp;51</span>
+      </a>
+      <nav class="pro-nav"><a href="/atelier">Atelier</a><a href="/statistiques" aria-current="page">Statistiques</a></nav>
+    </div>
+  </header>
+
+  <main class="section dash">
+    <div class="container">
+      <div class="dash__head">
+        <div>
+          <h1 class="atelier__title">Statistiques du site</h1>
+          <p class="muted small" id="dash-sub">Chargement…</p>
+        </div>
+        <div class="range" role="group" aria-label="Période">
+          <button type="button" data-days="7">7 jours</button>
+          <button type="button" data-days="30" aria-pressed="true">30 jours</button>
+          <button type="button" data-days="90">90 jours</button>
+          <button type="button" data-days="365">1 an</button>
+        </div>
+      </div>
+
+      <p class="dash__error" id="dash-error" hidden></p>
+
+      <div class="tiles" id="tiles" role="tablist" aria-label="Indicateur affiché dans le graphique"></div>
+
+      <section class="panel chart" aria-labelledby="chart-title">
+        <h2 class="panel__title" id="chart-title">Visites par jour</h2>
+        <div class="chart__wrap" id="chart"></div>
+        <div class="chart__tip" id="chart-tip" hidden></div>
+      </section>
+
+      <details class="panel dash__table">
+        <summary>Voir le détail jour par jour</summary>
+        <div class="table-scroll"><table id="table"></table></div>
+      </details>
+
+      <p class="muted small dash__note">Comptage anonyme, sans cookie : une visite = une personne qui ouvre le site (une fois par session). « Appels » = clics sur un numéro de téléphone. « Devis envoyés » = demandes réellement reçues par e-mail.</p>
+    </div>
+  </main>
+
+  <script src="/assets/stats.js?v=14" defer></script>
+</body>
+</html>

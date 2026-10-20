@@ -88,6 +88,25 @@ form.addEventListener('submit', async (e) => {
   }
 });
 
+// ---------- Statistiques anonymes (sans cookie) ----------
+const track = (e) => {
+  const data = new Blob([JSON.stringify({ e })], { type: 'application/json' });
+  if (!(navigator.sendBeacon && navigator.sendBeacon('/api/track', data))) {
+    fetch('/api/track', { method: 'POST', body: data, keepalive: true }).catch(() => {});
+  }
+};
+try {
+  if (!sessionStorage.getItem('bk51-vu')) { sessionStorage.setItem('bk51-vu', '1'); track('visite'); }
+} catch { track('visite'); }
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('a');
+  if (!a) return;
+  const href = a.getAttribute('href') || '';
+  if (href.startsWith('tel:')) track('appel');
+  else if (href === '#contact') track('devis_clic');
+  else if (href.includes('google.com/maps')) track(a.dataset.track || 'itineraire');
+});
+
 // ---------- Animations ----------
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
