@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css?v=14">
+  <link rel="stylesheet" href="/assets/styles.css?v=15">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -72,9 +72,10 @@
           <h1 class="anim-in" style="--d:1">Mécanique<br>toutes marques<br><mark>à Châlons.</mark></h1>
           <p class="slogan anim-in" style="--d:2">Votre véhicule, notre priorité.</p>
           <p class="lead anim-in" style="--d:2">Mécanique, entretien, réparation. On vous dit ce qui doit être fait, combien ça coûte, et on ne touche à rien sans votre accord. Au garage ou à domicile, jusqu'à 40&nbsp;km.</p>
+          <p class="open-status anim-in" style="--d:3" data-open-status hidden></p>
           <div class="hero__actions anim-in" style="--d:3">
-            <a href="#contact" class="btn btn--yellow">Demander un devis</a>
-            <a href="tel:+33749591208" class="link-arrow">Appeler le 07 49 59 12 08</a>
+            <a href="tel:+33749591208" class="btn btn--yellow">Appeler le 07 49 59 12 08</a>
+            <a href="#contact" class="btn btn--outline">Devis gratuit en ligne</a>
           </div>
         </div>
 
@@ -282,6 +283,11 @@
     </div>
   </footer>
 
-  <script src="/assets/main.js?v=14" defer></script>
+  <nav class="action-bar" aria-label="Contact rapide">
+    <a href="tel:+33749591208" class="action-bar__call">Appeler</a>
+    <a href="#contact" class="action-bar__quote">Devis gratuit</a>
+  </nav>
+
+  <script src="/assets/main.js?v=15" defer></script>
 </body>
 </html>

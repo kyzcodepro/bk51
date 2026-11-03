@@ -88,6 +88,43 @@ form.addEventListener('submit', async (e) => {
   }
 });
 
+// Ouvert / fermé (heure de Paris) : lundi-vendredi 9h-18h
+const openStatus = document.querySelector('[data-open-status]');
+if (openStatus) {
+  const parts = Object.fromEntries(new Intl.DateTimeFormat('fr-FR', {
+    timeZone: 'Europe/Paris', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23',
+  }).formatToParts(new Date()).map((p) => [p.type, p.value]));
+  const day = ['lun.', 'mar.', 'mer.', 'jeu.', 'ven.', 'sam.', 'dim.'].indexOf(parts.weekday);
+  const mins = Number(parts.hour) * 60 + Number(parts.minute);
+  const weekday = day >= 0 && day <= 4;
+  const open = weekday && mins >= 540 && mins < 1080;
+  let text;
+  if (open) text = 'Ouvert maintenant · ferme à 18h';
+  else if (weekday && mins < 540) text = 'Fermé · ouvre aujourd\'hui à 9h';
+  else if (day >= 0 && day <= 3) text = 'Fermé · ouvre demain à 9h';
+  else text = 'Fermé · ouvre lundi à 9h';
+  openStatus.textContent = text;
+  openStatus.classList.toggle('is-open', open);
+  openStatus.hidden = false;
+}
+
+// Barre d'action mobile : visible après le haut de page, masquée sur le formulaire
+const actionBar = document.querySelector('.action-bar');
+if (actionBar && 'IntersectionObserver' in window) {
+  const seen = new Map();
+  const update = () => actionBar.classList.toggle('is-visible', !seen.get('hero') && !seen.get('contact'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => seen.set(e.target.dataset.bar, e.isIntersecting));
+    update();
+  });
+  const hero = document.querySelector('.hero');
+  const contact = document.getElementById('contact-form');
+  hero.dataset.bar = 'hero';
+  contact.dataset.bar = 'contact';
+  io.observe(hero);
+  io.observe(contact);
+}
+
 // ---------- Statistiques anonymes (sans cookie) ----------
 const track = (e) => {
   const data = new Blob([JSON.stringify({ e })], { type: 'application/json' });
