@@ -1,0 +1,180 @@
+[
+  {
+    "slug": "nettoyage-fap-chalons-en-champagne",
+    "nav": "Nettoyage FAP",
+    "title": "Nettoyage FAP à Châlons-en-Champagne",
+    "meta": "Voyant FAP allumé, perte de puissance, mode dégradé ? BK AUTO 51 diagnostique et nettoie votre filtre à particules à Châlons-en-Champagne et à domicile jusqu'à 40 km. Devis gratuit.",
+    "lead": "Voyant FAP allumé, moteur qui manque de puissance, voiture en mode dégradé ? Le filtre à particules est souvent encrassé, surtout sur les diesels qui roulent beaucoup en ville. On diagnostique, on nettoie quand c'est possible, et on vous explique avant d'intervenir.",
+    "signs": [
+      "Voyant FAP ou voyant moteur allumé au tableau de bord",
+      "Perte de puissance, le moteur « ne prend plus les tours »",
+      "Passage en mode dégradé",
+      "Fumée noire à l'échappement ou odeur inhabituelle",
+      "Consommation de carburant en hausse",
+      "Régénérations qui échouent sur les petits trajets"
+    ],
+    "steps": [
+      ["Diagnostic", "Lecture des codes défaut et contrôle du capteur de pression différentielle, pour confirmer que le FAP est bien en cause."],
+      ["Recherche de la cause", "Un FAP qui s'encrasse vite cache parfois autre chose : vanne EGR, injecteurs, capteur. On vérifie pour que le problème ne revienne pas."],
+      ["Nettoyage ou remplacement", "Selon l'état du filtre, on le nettoie ou on vous propose son remplacement. Vous avez le prix avant toute intervention."],
+      ["Contrôle final", "Effacement des défauts, régénération si nécessaire et essai pour vérifier que tout est rentré dans l'ordre."]
+    ],
+    "faq": [
+      ["Pourquoi mon FAP s'encrasse-t-il ?", "Le filtre se régénère en brûlant les suies à haute température, ce qui demande de rouler un moment à bon régime. Les trajets courts et répétés empêchent ces régénérations, et les suies s'accumulent."],
+      ["Peut-on rouler avec le voyant FAP allumé ?", "Quelques kilomètres pour venir au garage, oui, mais ne tardez pas : un filtre colmaté peut faire monter la pression à l'échappement et abîmer d'autres pièces. En cas de doute, appelez-nous."],
+      ["Faut-il forcément remplacer le FAP ?", "Non, un nettoyage suffit souvent. On vous dit honnêtement ce qui est possible après le diagnostic, avant de faire quoi que ce soit."]
+    ]
+  },
+  {
+    "slug": "vidange-entretien-chalons-en-champagne",
+    "nav": "Vidange & entretien",
+    "title": "Vidange et entretien à Châlons-en-Champagne",
+    "meta": "Vidange, filtres et révision toutes marques à Châlons-en-Champagne, au garage ou à domicile jusqu'à 40 km. Huile adaptée à votre moteur, devis gratuit. BK AUTO 51.",
+    "lead": "Vidange, filtres, niveaux, révision selon le carnet constructeur : un entretien régulier, c'est un moteur qui dure et moins de pannes. On s'en occupe au garage, ou chez vous si c'est plus simple.",
+    "signs": [
+      "L'échéance de vidange du carnet ou de l'indicateur au tableau de bord est atteinte",
+      "Voyant d'entretien ou de niveau d'huile allumé",
+      "Huile noire ou niveau bas sur la jauge",
+      "Plus d'un an depuis la dernière révision",
+      "Achat d'un véhicule d'occasion dont l'historique d'entretien est incertain"
+    ],
+    "steps": [
+      ["Vidange", "Remplacement de l'huile moteur par une huile aux normes de votre constructeur, et du filtre à huile."],
+      ["Filtres", "Contrôle et remplacement si besoin des filtres à air, d'habitacle et à carburant."],
+      ["Points de contrôle", "Niveaux, freins, pneus, éclairage, courroies, batterie : on vous signale ce qui devra être prévu."],
+      ["Remise à zéro", "Remise à zéro de l'indicateur d'entretien."]
+    ],
+    "faq": [
+      ["Tous les combien faut-il faire la vidange ?", "Ça dépend du moteur et de l'huile : en général entre 10 000 et 30 000 km, ou une fois par an. Le plus fiable reste le carnet d'entretien ou l'indicateur de votre véhicule."],
+      ["Pouvez-vous faire la vidange chez moi ?", "Oui, on se déplace à domicile ou sur votre lieu de travail à Châlons et jusqu'à 40 km autour. Indiquez-le dans votre demande de devis."],
+      ["L'entretien chez un garage indépendant fait-il perdre la garantie constructeur ?", "Non, tant que l'entretien suit les préconisations du constructeur avec des pièces de qualité équivalente, la garantie est maintenue."]
+    ]
+  },
+  {
+    "slug": "freinage-chalons-en-champagne",
+    "nav": "Freinage",
+    "title": "Freinage : plaquettes et disques à Châlons-en-Champagne",
+    "meta": "Bruit au freinage, pédale molle, vibrations ? Contrôle et remplacement des plaquettes, disques, tambours et liquide de frein à Châlons-en-Champagne. Devis gratuit. BK AUTO 51.",
+    "lead": "Les freins, c'est votre sécurité. Au moindre bruit, à la moindre vibration ou si la pédale change de comportement, faites-les contrôler. On vous dit ce qui est usé et ce qui peut encore attendre.",
+    "signs": [
+      "Grincement ou crissement au freinage",
+      "Vibrations dans le volant ou la pédale en freinant",
+      "Pédale molle, qui s'enfonce plus que d'habitude",
+      "La voiture tire d'un côté quand vous freinez",
+      "Voyant de frein ou d'usure des plaquettes allumé",
+      "Distance de freinage qui s'allonge"
+    ],
+    "steps": [
+      ["Contrôle", "Mesure de l'usure des plaquettes et des disques, état des étriers, des flexibles et du liquide de frein."],
+      ["Devis", "On vous montre ce qui est usé et on vous donne le prix avant de toucher à quoi que ce soit."],
+      ["Remplacement", "Plaquettes, disques, tambours ou liquide de frein selon le besoin, avant et/ou arrière."],
+      ["Essai", "Essai sur route pour vérifier un freinage franc et sans bruit."]
+    ],
+    "faq": [
+      ["Quand changer les plaquettes de frein ?", "Ça dépend de votre conduite : en ville elles s'usent plus vite. Un contrôle à chaque entretien permet de les changer au bon moment, avant d'abîmer les disques."],
+      ["Faut-il changer les disques en même temps que les plaquettes ?", "Pas toujours. Si les disques sont encore dans les cotes et en bon état, on garde les disques. On mesure et on vous le dit."],
+      ["Pourquoi mes freins grincent-ils ?", "Plaquettes usées, disques voilés, poussière ou simple humidité : le bruit n'a pas toujours la même cause. Un contrôle rapide permet de savoir si c'est sans gravité ou s'il faut intervenir."]
+    ]
+  },
+  {
+    "slug": "distribution-chalons-en-champagne",
+    "nav": "Distribution",
+    "title": "Changement de distribution à Châlons-en-Champagne",
+    "meta": "Remplacement du kit de distribution et de la pompe à eau à Châlons-en-Champagne, toutes marques, aux échéances constructeur. Devis gratuit avant intervention. BK AUTO 51.",
+    "lead": "Une courroie de distribution qui casse, c'est souvent un moteur à refaire. La remplacer à temps, avec les galets et la pompe à eau, coûte bien moins cher. On vérifie l'échéance de votre véhicule et on vous fait un devis clair.",
+    "signs": [
+      "Le kilométrage ou l'âge prévu par le constructeur pour la distribution est atteint",
+      "Achat d'un véhicule d'occasion sans preuve du dernier changement",
+      "Bruit de sifflement ou de cliquetis côté distribution",
+      "Fuite de liquide de refroidissement près de la pompe à eau"
+    ],
+    "steps": [
+      ["Vérification de l'échéance", "On regarde les préconisations de votre constructeur, en kilomètres et en années."],
+      ["Devis", "Kit complet : courroie, galets, pompe à eau si elle est entraînée par la distribution. Prix donné avant intervention."],
+      ["Remplacement", "Montage selon les calages du constructeur."],
+      ["Contrôle", "Purge du circuit de refroidissement si besoin et vérification du bon fonctionnement moteur."]
+    ],
+    "faq": [
+      ["Quand changer la courroie de distribution ?", "Selon les moteurs, l'échéance varie beaucoup, souvent quelque part entre 60 000 et 240 000 km, avec aussi une limite en années. Donnez-nous votre plaque, on vérifie pour votre modèle."],
+      ["Pourquoi changer la pompe à eau en même temps ?", "Sur beaucoup de moteurs, elle est entraînée par la courroie : la remplacer pendant l'intervention évite de tout redémonter plus tard pour une fuite."],
+      ["Ma voiture a une chaîne de distribution, est-ce concerné ?", "Une chaîne est prévue pour durer plus longtemps, mais elle peut s'allonger et faire du bruit. On peut la contrôler si vous avez un doute."]
+    ]
+  },
+  {
+    "slug": "embrayage-chalons-en-champagne",
+    "nav": "Embrayage",
+    "title": "Embrayage à Châlons-en-Champagne",
+    "meta": "Embrayage qui patine, pédale dure, vitesses qui accrochent ? Diagnostic et remplacement du kit embrayage toutes marques à Châlons-en-Champagne. Devis gratuit. BK AUTO 51.",
+    "lead": "Pédale dure, embrayage qui patine, vitesses qui passent mal : l'embrayage s'use avec les kilomètres et la conduite en ville. On diagnostique la cause avant de vous proposer quoi que ce soit.",
+    "signs": [
+      "Le moteur monte dans les tours mais la voiture n'accélère pas (patinage)",
+      "Pédale dure, molle ou qui reste enfoncée",
+      "Vitesses difficiles à passer ou qui craquent",
+      "Point de patinage très haut",
+      "Bruit en appuyant ou en relâchant la pédale",
+      "Odeur de brûlé après une côte ou un démarrage"
+    ],
+    "steps": [
+      ["Diagnostic", "Essai et contrôle de la commande d'embrayage (câble ou circuit hydraulique), pour ne remplacer que ce qui est nécessaire."],
+      ["Devis", "Kit embrayage, butée, et volant moteur si besoin. Vous connaissez le prix avant intervention."],
+      ["Remplacement", "Dépose de la boîte, remplacement des pièces, remontage."],
+      ["Réglage et essai", "Purge ou réglage de la commande et essai sur route."]
+    ],
+    "faq": [
+      ["Combien de temps dure un embrayage ?", "Ça dépend énormément de l'usage : beaucoup plus longtemps sur route que dans les bouchons. Les signes d'usure sont plus fiables que le kilométrage."],
+      ["Faut-il changer le volant moteur avec l'embrayage ?", "Pas systématiquement. Sur les volants bi-masse, on contrôle son état et on vous dit s'il doit être remplacé."],
+      ["Un problème de pédale vient-il forcément de l'embrayage ?", "Non, ça peut venir de la commande : câble, émetteur ou récepteur hydraulique. C'est pour ça qu'on diagnostique d'abord."]
+    ]
+  },
+  {
+    "slug": "diagnostic-auto-chalons-en-champagne",
+    "nav": "Diagnostic auto",
+    "title": "Diagnostic auto à Châlons-en-Champagne",
+    "meta": "Voyant moteur allumé, panne, bruit suspect ? Diagnostic électronique toutes marques à Châlons-en-Champagne et à domicile jusqu'à 40 km. On trouve la cause avant de réparer. BK AUTO 51.",
+    "lead": "Un voyant s'allume, la voiture a un comportement bizarre, un bruit apparaît ? Le diagnostic permet de trouver la vraie cause au lieu de changer des pièces au hasard. On lit les défauts, on vérifie, et on vous explique.",
+    "signs": [
+      "Voyant moteur, voyant orange ou message d'alerte au tableau de bord",
+      "Démarrage difficile ou moteur qui cale",
+      "Perte de puissance, à-coups",
+      "Consommation anormale",
+      "Problème électrique : batterie qui se décharge, équipement qui ne marche plus",
+      "Bruit ou vibration inhabituels"
+    ],
+    "steps": [
+      ["Lecture des défauts", "Branchement de la valise de diagnostic et lecture des codes défaut des calculateurs."],
+      ["Contrôles", "Un code défaut indique une piste, pas forcément la pièce à changer : on vérifie capteurs, câblages et mesures."],
+      ["Explication", "On vous dit ce qu'on a trouvé, ce qui est urgent et ce qui peut attendre, avec un devis."],
+      ["Réparation", "Si vous le souhaitez, on répare, puis on efface les défauts et on contrôle."]
+    ],
+    "faq": [
+      ["Le voyant moteur est orange, est-ce grave ?", "Pas forcément, mais il ne faut pas l'ignorer. Un voyant rouge ou qui clignote demande en revanche de s'arrêter rapidement. Dans les deux cas, un diagnostic permet de savoir."],
+      ["Pouvez-vous faire le diagnostic à domicile ?", "Oui, on se déplace avec la valise de diagnostic à Châlons et jusqu'à 40 km autour."],
+      ["Effacer le défaut suffit-il ?", "Non : si la cause n'est pas réglée, le voyant reviendra. On cherche toujours l'origine du problème."]
+    ]
+  },
+  {
+    "slug": "mecanicien-a-domicile-marne",
+    "nav": "Mécanicien à domicile",
+    "title": "Mécanicien à domicile autour de Châlons-en-Champagne",
+    "meta": "Mécanicien à domicile dans la Marne : vidange, freins, diagnostic, batterie… BK AUTO 51 se déplace chez vous ou au travail, à Châlons et jusqu'à 40 km. Devis gratuit.",
+    "lead": "Pas le temps de passer au garage, ou voiture qui ne démarre plus ? On vient à vous, chez vous ou sur votre lieu de travail, à Châlons-en-Champagne et jusqu'à 40 km autour.",
+    "signs": [
+      "Vous n'avez pas le temps de déposer la voiture au garage",
+      "La voiture ne démarre plus ou n'est pas en état de rouler",
+      "Entretien courant : vidange, filtres, plaquettes",
+      "Voyant allumé à diagnostiquer",
+      "Batterie à remplacer"
+    ],
+    "steps": [
+      ["Vous nous contactez", "Par téléphone ou via le formulaire, avec votre plaque et une description du problème."],
+      ["On vous propose un créneau", "On convient d'un rendez-vous chez vous ou sur votre lieu de travail, avec un devis."],
+      ["Intervention sur place", "Les interventions possibles sur place sont faites directement. Pour les plus lourdes, on vous propose de passer au garage."],
+      ["Explications", "On vous dit ce qui a été fait et ce qu'il faudra prévoir."]
+    ],
+    "faq": [
+      ["Dans quelles communes vous déplacez-vous ?", "Châlons-en-Champagne, Saint-Memmie, Fagnières, Saint-Martin-sur-le-Pré, Mourmelon-le-Grand, Suippes, Vertus, Épernay, Vitry-le-François et alentours, jusqu'à environ 40 km. Un doute ? Appelez-nous."],
+      ["Quelles réparations peut-on faire à domicile ?", "L'entretien courant, les freins, le diagnostic, la batterie et beaucoup de petites réparations. Les gros travaux comme un embrayage ou une distribution se font plutôt au garage."],
+      ["Le déplacement est-il compté ?", "Les conditions du déplacement sont indiquées dans le devis, avant l'intervention."]
+    ]
+  }
+]

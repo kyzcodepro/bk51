@@ -36,3 +36,8 @@ devis envoyés, itinéraires, clics « avis », taux de contact. Comptage anonym
 1. Vercel → Storage (ou Marketplace) → Upstash for Redis → Create (offre gratuite) → Connect au projet.
    Cela crée automatiquement `KV_REST_API_URL` et `KV_REST_API_TOKEN`.
 2. Redéployer.
+
+## Pages services (référencement)
+Les pages `services/*.html` et `sitemap.xml` sont générées à partir de `tools/services.json`.
+Pour modifier un texte ou ajouter un service : éditer `tools/services.json`, puis lancer
+`python3 tools/build_pages.py` (met aussi à jour les liens du pied de page de l'accueil).

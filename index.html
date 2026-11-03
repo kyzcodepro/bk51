@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css?v=15">
+  <link rel="stylesheet" href="/assets/styles.css?v=16">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -31,7 +31,14 @@
       "addressCountry": "FR"
     },
     "telephone": "+33749591208",
-    "openingHours": "Mo-Fr 09:00-18:00",
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }],
+    "priceRange": "€€",
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=BK+AUTO+51+3+rue+Adolphe+Willette+51000+Ch%C3%A2lons-en-Champagne",
     "areaServed": {
       "@type": "GeoCircle",
       "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 48.957, "longitude": 4.363 },
@@ -129,14 +136,14 @@
           <p>Toutes marques, essence, diesel et hybride.</p>
         </header>
         <ol class="services">
-          <li data-reveal><span class="services__n">01</span><h3>Mécanique générale</h3><p>Moteur, échappement, suspension, trains roulants : on répare toutes marques.</p></li>
-          <li data-reveal><span class="services__n">02</span><h3>Vidange &amp; filtres</h3><p>Huile moteur, filtres à huile, à air, d'habitacle et à carburant.</p></li>
-          <li data-reveal><span class="services__n">03</span><h3>Freinage</h3><p>Plaquettes, disques, tambours, liquide de frein. Contrôle et remplacement.</p></li>
-          <li data-reveal><span class="services__n">04</span><h3>Distribution</h3><p>Remplacement du kit de distribution et de la pompe à eau, aux échéances prévues.</p></li>
-          <li data-reveal><span class="services__n">05</span><h3>Embrayage</h3><p>Pédale dure, patinage, passage de vitesses difficile : diagnostic et remplacement.</p></li>
-          <li data-reveal><span class="services__n">06</span><h3>Diagnostic auto</h3><p>Voyant allumé, lecture des codes défaut, recherche de panne électrique ou moteur.</p></li>
-          <li data-reveal><span class="services__n">07</span><h3>Nettoyage FAP</h3><p>Filtre à particules encrassé, perte de puissance, voyant FAP : nettoyage pour retrouver un moteur qui respire.</p></li>
-          <li data-reveal><span class="services__n">08</span><h3>Entretien toutes marques</h3><p>Révision selon le carnet constructeur, contrôle des niveaux et des points de sécurité.</p></li>
+          <li data-reveal><span class="services__n">01</span><h3><a href="/services/mecanicien-a-domicile-marne">Mécanique générale</a></h3><p>Moteur, échappement, suspension, trains roulants : on répare toutes marques.</p></li>
+          <li data-reveal><span class="services__n">02</span><h3><a href="/services/vidange-entretien-chalons-en-champagne">Vidange &amp; filtres</a></h3><p>Huile moteur, filtres à huile, à air, d'habitacle et à carburant.</p></li>
+          <li data-reveal><span class="services__n">03</span><h3><a href="/services/freinage-chalons-en-champagne">Freinage</a></h3><p>Plaquettes, disques, tambours, liquide de frein. Contrôle et remplacement.</p></li>
+          <li data-reveal><span class="services__n">04</span><h3><a href="/services/distribution-chalons-en-champagne">Distribution</a></h3><p>Remplacement du kit de distribution et de la pompe à eau, aux échéances prévues.</p></li>
+          <li data-reveal><span class="services__n">05</span><h3><a href="/services/embrayage-chalons-en-champagne">Embrayage</a></h3><p>Pédale dure, patinage, passage de vitesses difficile : diagnostic et remplacement.</p></li>
+          <li data-reveal><span class="services__n">06</span><h3><a href="/services/diagnostic-auto-chalons-en-champagne">Diagnostic auto</a></h3><p>Voyant allumé, lecture des codes défaut, recherche de panne électrique ou moteur.</p></li>
+          <li data-reveal><span class="services__n">07</span><h3><a href="/services/nettoyage-fap-chalons-en-champagne">Nettoyage FAP</a></h3><p>Filtre à particules encrassé, perte de puissance, voyant FAP : nettoyage pour retrouver un moteur qui respire.</p></li>
+          <li data-reveal><span class="services__n">08</span><h3><a href="/services/vidange-entretien-chalons-en-champagne">Entretien toutes marques</a></h3><p>Révision selon le carnet constructeur, contrôle des niveaux et des points de sécurité.</p></li>
         </ol>
       </div>
     </section>
@@ -275,6 +282,7 @@
 
   <footer class="footer">
     <div class="container">
+      <!-- services:start --><nav class="footer__services" aria-label="Nos services"><p>Nos services</p><ul><li><a href="/services/nettoyage-fap-chalons-en-champagne">Nettoyage FAP</a></li><li><a href="/services/vidange-entretien-chalons-en-champagne">Vidange &amp; entretien</a></li><li><a href="/services/freinage-chalons-en-champagne">Freinage</a></li><li><a href="/services/distribution-chalons-en-champagne">Distribution</a></li><li><a href="/services/embrayage-chalons-en-champagne">Embrayage</a></li><li><a href="/services/diagnostic-auto-chalons-en-champagne">Diagnostic auto</a></li><li><a href="/services/mecanicien-a-domicile-marne">Mécanicien à domicile</a></li></ul></nav><!-- services:end -->
       <p class="footer__mark" aria-hidden="true">BK AUTO 51</p>
       <div class="footer__inner">
         <p>© <span id="year"></span> BK AUTO 51 — Garage automobile, Châlons-en-Champagne — Déplacement jusqu'à 40&nbsp;km</p>
@@ -288,6 +296,6 @@
     <a href="#contact" class="action-bar__quote">Devis gratuit</a>
   </nav>
 
-  <script src="/assets/main.js?v=15" defer></script>
+  <script src="/assets/main.js?v=16" defer></script>
 </body>
 </html>
